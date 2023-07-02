@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function getVersion(){
+                document.getElementById("version").innerHTML = bridge.getAppVersion()
+                
+            }
+            function navigateTo(){
+                let path = document.getElementById("navigateToPath")
+                console.log()
+                bridge.navigateTo(path.value)
+            }
+            function openSettings(){
+                document.getElementById("version").innerHTML = "clicked"
+                window.open('app-settings:','_system')
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            App Version :
+        </p>
+        <p id="version">
+            Version
+        </p>
+        <input type="text" id="navigateToPath" required />
+        <button onclick="getVersion()">Show Version</button>
+        <button onclick="navigateTo()">NavigateTo</button>
+        <button onclick="openSettings()">Open Settings</button>
+    </body>
+</html>
